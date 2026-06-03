@@ -3,7 +3,7 @@ const articles = {
     slug: "philippines",
     tag: "Philippines",
     title: "A First-Timer's Guide to Food and Travel in the Philippines",
-    author: "Cabatian",
+    author: "Jeanelle Cabatian",
     category: "National Travel",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Banaue%20rice%20terraces.jpg",
     sourceLabel: "Wikimedia Commons",
