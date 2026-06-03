@@ -10,7 +10,6 @@ const articles = {
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Banaue_rice_terraces.jpg",
     teaser:
       "A first-time travel article about food, culture, beaches, and top destinations across the Philippines.",
-    meta: [],
     paragraphs: [
       "The Philippines is one of the most beautiful countries in Southeast Asia and a perfect destination for first-time travelers. Made up of more than 7,641 islands, the country is known for its breathtaking beaches, rich culture, delicious food, colorful festivals, and warm hospitality. Whether you are looking for adventure, relaxation, or cultural experiences, the Philippines has something special to offer. Luzon, the largest island group in the country, is one of the most visited destinations because of its historical landmarks, natural attractions, and exciting cities.",
       "One of the best ways to experience the Philippines is through its food. Filipino cuisine is rich in flavor and influenced by Malay, Spanish, Chinese, and American cultures. One of the most famous Filipino dishes is adobo, a savory dish made with chicken or pork cooked in soy sauce, vinegar, garlic, and spices. It is simple yet full of flavor and best paired with freshly cooked white rice. Another favorite dish is sinigang, a sour soup usually cooked with pork, shrimp, or fish together with vegetables such as water spinach and radish. Filipinos often enjoy this comforting soup during rainy days.",
@@ -31,11 +30,6 @@ const articles = {
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Mines_View_Park,_Baguio_City.jpg",
     teaser:
       "A travel advice article about planning a first trip to Baguio City, from food and weather to safety and pacing.",
-    meta: [
-      { label: "Article Type", value: "Travel Advice" },
-      { label: "Target Audience", value: "First Time Travelers" },
-      { label: "Topic", value: "Discover the Magic of Baguio" }
-    ],
     paragraphs: [
       "Visiting Baguio City for the first time is an exciting adventure filled with cool weather, scenic views, delicious food, and unforgettable experiences. Known as the \"Summer Capital of the Philippines,\" Baguio attracts travelers who want to relax, explore nature, and enjoy the city's unique charm. From peaceful parks to busy markets and famous tourist spots, there is always something fun to discover. However, first-time visitors may also feel overwhelmed because of the many places to visit and activities to try. That is why planning ahead can make your trip smoother, less stressful, and more enjoyable. Booking your accommodation early can help you save money and avoid last-minute problems, especially during peak seasons when many tourists visit the city. It is also helpful to research popular attractions so you can make the most of your stay. Since Baguio's weather can suddenly become cold or rainy, bringing comfortable clothes, jackets, and umbrellas is important. With the right preparation, first-time travelers can fully enjoy the beauty, culture, and relaxing atmosphere that Baguio City has to offer.",
       "One advice is to start your day early. Famous spots like Burnham Park, Session Road, Mines View Park, can be crowded in the afternoon because most of the people are not a morning person even if you is also not, you have to wake up early for a better experience in Baguio City visiting these places in the morning can have you to take better photos, and experience the calm and quiet streets. You can try their famous strawberry taho and go to the strawberry farm and pick some strawberries I am sure that you will your me time and have peace while picking. First-time travelers should be ready for a lot of walking, as many attractions are close to each other and it is more fun because Baguio is not so hot weather and you can enjoy it. Wearing comfortable shoes can help you to avoid hurting your feet. Travelers should also be patient. You can experience also the traffic, long lines, and busy markets because as you know Baguio is a place that people want to go especially when the weather is super cold.",
@@ -52,7 +46,6 @@ const articles = {
     sourceUrl: "https://commons.wikimedia.org/wiki/File:Calle_Crisologo_Vigan_City.jpg",
     teaser:
       "A heritage travel article about Vigan City, its old streets, culture, food, and memorable atmosphere.",
-    meta: [],
     paragraphs: [
       "Traveling is more than simply visiting new places - it is about experiencing stories, traditions, and cultures that leave lasting memories. Among the many destinations in the Philippines, Vigan City stands out as a place where history and modern life beautifully coexist. Located in the province of Ilocos Sur, Vigan is known for preserving its colonial heritage, traditional architecture, and unique cultural identity. Walking through the city feels like stepping into another era, where cobblestone streets, ancestral houses, and horse-drawn carriages bring the past back to life.",
       "As a first-time visitor arriving in Vigan City, there is an immediate feeling that this place is different from other urban destinations. Unlike the busy atmosphere of modern cities, Vigan offers a calm and nostalgic environment. The sound of horse hooves echoing on old streets and the sight of centuries-old structures create a sense of wonder and excitement. The city does not merely present historical attractions - it allows visitors to experience history firsthand.",
@@ -115,24 +108,11 @@ function renderArticle(slug) {
   homePage.hidden = true;
   articlePage.hidden = false;
 
-  const metaHtml = article.meta.length
-    ? `<div class="article-meta">${article.meta
-        .map((item) => `<span class="meta-chip"><strong>${item.label}:</strong> ${item.value}</span>`)
-        .join("")}</div>`
-    : "";
 
   articleView.innerHTML = `
     <figure class="article-hero">
       <img src="${article.image}" alt="${article.tag} article image" />
     </figure>
-    <div class="article-meta-wrap">
-      <p class="section-kicker">${article.category}</p>
-      <h2 class="article-title">${article.title}</h2>
-      <p class="article-meta">
-        <span><strong>Author:</strong> ${article.author}</span>
-      </p>
-      ${metaHtml}
-    </div>
     <p class="article-source">
       Main photo source:
       <a href="${article.sourceUrl}" target="_blank" rel="noreferrer">${article.sourceLabel}</a>
