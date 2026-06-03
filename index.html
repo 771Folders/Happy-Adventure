@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="#" aria-label="Happy Adventure home">
+        <img class="brand-mark" src="assets/happy-adventure-logo.jpg"></img>
+        <span class="brand-text">
+          <strong>Happy Adventure</strong>
+          <small>Explore the Philippines</small>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#philippines">Philippines</a>
+        <a href="#baguio">Baguio</a>
+        <a href="#vigan">Vigan City</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-copy">
+        <h1>Discover the beauty of Philippines</h1>
+        <p class="intro">
+          Click a card to open the full article page for the Philippines, Baguio, or Vigan City.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section id="home-page" class="page-section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Articles</p>
+            <h2>Choose a destination</h2>
+          </div>
+        </div>
+        <div id="card-grid" class="card-grid" aria-label="Article cards"></div>
+      </section>
+
+      <section id="article-page" class="page-section" hidden>
+        <button id="back-button" class="back-button" type="button">Back to cards</button>
+        <article id="article-view" class="article-view" aria-live="polite"></article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <p class="section-kicker">Authors</p>
+        <p class="contributors">Atienza, Cabatian, Dime, Macalindong, Medina, Rosales, Saballo</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
