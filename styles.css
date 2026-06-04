@@ -527,6 +527,32 @@ main {
   border-top: 1px solid rgba(20, 34, 43, 0.08);
 }
 
+.footer-brandline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.copyright-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(46, 138, 125, 0.12);
+  color: #184f48;
+  flex: 0 0 auto;
+}
+
+.copyright-mark svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 .footer-authors .section-kicker {
   margin-bottom: 6px;
 }
@@ -713,6 +739,10 @@ main {
   .footer-authors {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer-brandline {
+    margin-bottom: 8px;
   }
 
   .newsletter-form {
