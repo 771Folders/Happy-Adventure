@@ -218,6 +218,7 @@ const articleView = document.getElementById("article-view");
 const backButton = document.getElementById("back-button");
 
 const articleOrder = ["philippines", "baguio", "vigan"];
+const hasArticleApp = cardGrid && homePage && articlePage && articleView;
 
 function renderCards() {
   cardGrid.innerHTML = "";
@@ -313,11 +314,34 @@ function syncRoute() {
   renderArticle(slug);
 }
 
-backButton.addEventListener("click", () => {
-  location.hash = "";
-});
+if (backButton) {
+  backButton.addEventListener("click", () => {
+    location.hash = "";
+  });
+}
 
 window.addEventListener("hashchange", syncRoute);
 
-renderCards();
-syncRoute();
+const navToggle = document.querySelector(".nav-toggle");
+const siteNav = document.querySelector(".site-nav");
+const navLinks = document.getElementById("site-nav-links");
+
+if (navToggle && siteNav && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-expanded", String(!isOpen));
+    siteNav.classList.toggle("nav-open", !isOpen);
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navToggle.setAttribute("aria-expanded", "false");
+      siteNav.classList.remove("nav-open");
+    });
+  });
+}
+
+if (hasArticleApp) {
+  renderCards();
+  syncRoute();
+}
